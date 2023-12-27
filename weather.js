@@ -7,6 +7,9 @@ let humidityinfo = document.querySelector('.Humidity');
 let searchbtn = document.querySelector('#searchtemp');
 let search = document.querySelector('.form-control');
 let windinfo=document.querySelector('.Wind');
+let liketempinfo=document.querySelector('.Temperature_feel');
+let Pressure=document.querySelector('.pressure');
+let Visibility=document.querySelector('.visibility');;
 
 // Function to convert Kelvin to Celsius
 function kelvinToCelsius(kelvin) {
@@ -24,12 +27,17 @@ async function getWeather(city) {
       // Extract and use the relevant weather information from the 'data' object
       const temperatureKelvin = data.main.temp;
       const temperatureCelsius = kelvinToCelsius(temperatureKelvin);
-
       // Update your app's UI with the weather information
       tempinfo.innerText = `${temperatureCelsius.toFixed(2)}°C`;
       locationinfo.innerText = data.name;
-      humidityinfo.innerText = `Humidity: ${data.main.humidity}%`;
+      humidityinfo.innerText = ` ${data.main.humidity}%`;
       windinfo.innerText=data.wind.speed;
+      liketempinfo.innerText=`${kelvinToCelsius(data.main.feels_like).toFixed(2)}°C`;
+     Pressure.innerText=data.main.pressure;
+     Visibility.innerText=` ${data.visibility}%`;
+
+
+
     } else {
       // Handle API error
       console.error(`Error: ${data.message}`);
@@ -43,5 +51,10 @@ async function getWeather(city) {
 // Change the event listener to call getWeather when the button is clicked
 searchbtn.addEventListener("click", () => {
   event.preventDefault(); // Prevents the default form submission behavior
-  getWeather(search.value);
-});
+  if (search.value !== '') {
+    getWeather(search.value);
+  } else {
+      locationinfo.innerText = 'Please enter a city ';
+  }
+}
+);
