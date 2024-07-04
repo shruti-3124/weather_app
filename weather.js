@@ -1,4 +1,4 @@
-const apiKey = '4e9acb57da757587adbea7dcb14ab543';
+const apiKey = 'YOUR_API_KEY_HERE';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 let tempinfo = document.querySelector('.Temperature');
