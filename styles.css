@@ -1,6 +1,6 @@
 nav{
 height: 100px;
-background-color: bisque;
+background-color: #EFD3D7;
 }
 h5{
 font-size: 50px;
@@ -14,6 +14,8 @@ margin-left: 50px;
 .search{
 display: flex;
 width: 500px;
+font-size: 20px;
+color: #1B2021;
 }
 .search .btn{
 width: 100px;
@@ -30,25 +32,33 @@ margin-left: 20px;
 top:300px;
 }
 .card-3{
-margin-right: 20px;
+margin-right: 10px;
 }
 .card-img-top{
-height: 300px;
+height: 350px;
+border: 5px solid  #280000;
+
 }
 .location{
 position: absolute;
-top: 150px;
+top: 120px;
 left: 730px;
 height: 70px;
 line-height: 2;
 width: 350px;
-border-radius: 10px;
+border-radius: 5px;
 font-size: 30px;
 text-align: center;
 font-family: Georgia, 'Times New Roman', Times, serif;
-color: antiquewhite;
+color: #280000;
 font-weight: 600;
-background-color: blue;
+background-color:palevioletred;
+}
+#description{
+top: 210px;
+background-color:rgb(6, 75, 107);
+color: #f4f5f1;
+
 }
 p{
 font-size: 30px;
